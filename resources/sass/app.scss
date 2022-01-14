@@ -5,17 +5,29 @@
 @import 'variables';
 @import 'fonts';
 @import 'nav';
+@import 'header';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~parsleyjs/src/parsley";
+
 html, body {
-    background-color: #262631;
-    color: #636b6f;
-    font-family: 'nunitoregular';
-    font-weight: 200;
-    height: 100vh;
-    margin: 0;
+    background-color: #1F2125;
+    padding: 20px;
+    // color: #636b6f;
+    // font-family: 'nunitoregular';
+    // font-weight: 200;
+    // height: 100vh;
+    // margin: 0;
+}
+
+.parsley-errors-list{
+    position: absolute;
 }
 
 .full-height {
@@ -60,13 +72,135 @@ html, body {
     margin-bottom: 30px;
 }
 
+.body{
+    border-radius: 10px;
+    background-color: #163F58;
+    padding: 20px;
+    margin: 25px 0;
+    font-size: 20px;
+    color: $white;
+}
+
 #homePage{
-    .body{
-        border: 1px solid #636b6f;
+    h2{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .list-container{
+        max-width: 600px;
+        margin: 0 auto;
+        .list{
+            display: grid;
+            grid-template-columns: 80% 1fr;
+            grid-gap: 10px;
+            .name{
+                // border: 1px solid white;
+            }
+            .function-container{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                i{
+                    cursor: pointer;
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+}
+
+#gamesPage{
+    h2{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .games-container{
+        max-width: 600px;
+        margin: 0 auto;
+        .game{
+            display: grid;
+            grid-template-columns: 20px 80% 1fr;
+            grid-gap: 10px;
+            position: relative;
+            .status-description{
+                position: absolute;
+                background: white;
+                border-radius: 5px;
+                padding: 5px;
+                color: black;
+                font-size: 12px;
+                top: 35px;
+                left: -10px;
+                z-index: 25;
+                display: none;
+            }
+            .status{
+                cursor: pointer;
+                color: #33AB5F;
+                &:hover + .status-description{
+                    display: block;
+                }
+            }
+            .title{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 20px;
+                cursor: pointer;
+                .name{
+                    // border: 1px solid white;
+                }
+            }
+            .function-container{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                i{
+                    cursor: pointer;
+                    margin: 0 5px;
+                }
+            }
+        }
+        .game-details{
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            background: $white;
+            color: black;
+            display: none;
+            overflow: hidden;
+
+        }
+    }
+}
+
+#loginPage, #signupPage{
+    .user_ask_add{
+        background-color: white;
+        align-content: center;
+        max-width:300px;
+        margin: auto;
+        padding: 30px;
+        border: solid 1px #333333;
         border-radius: 10px;
-        padding: 10px;
-        font-size: 20px;
-        color: $white;
+        h2{
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .links{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            text-align: center;
+            a{
+                padding: 0;
+                font-size: 11px;
+            }
+        }
+        .flex-center{
+            justify-content: center;
+        }
     }
 }
 

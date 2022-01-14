@@ -1,0 +1,12 @@
+.header-container{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #163F58;
+    padding: 20px;
+    margin: 25px 0;
+    h2{
+        color: $white;
+    }
+}

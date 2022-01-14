@@ -3,8 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Website Base</title>
+        <title>Game Plan</title>
 
         <meta name="title" content={{ @$seo['title'] }}>
         <meta name="description" content={{ @$seo['description'] }}>
@@ -18,9 +19,13 @@
 
     </head>
     <body>
-        @include('layouts.navbar')
+        @if(@$url != 'login')
+            @include('layouts.header')
+        @endif
 
         @yield('content')
+
+        @yield('added-scripts')
     
     </body>
 </html>
